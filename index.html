@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var itemBox = $(".item-box");
+                        
+            itemBox.on('mouseenter focusin',function(){
+                $(this).find(".item-option").css({"opacity":"1"});
+                $(this).find(".item-price .curr-cost").css({ "z-index": "99", "color": "#fff" });
+                $(this).find(".item-sale .curr-cost").css({"z-index":"99", "color":"#ff3f2b"});
+                $(this).find(".origin-cost").css({ "z-index": "99"});
+                $(this).find(".item-heading span").css({ "color": "#fff" });
+            });
+            itemBox.on('mouseleave focusout', function() {
+                $(this).find(".item-option").css({"opacity":"0"});
+                $(this).find(".curr-cost").css({ "z-index": "0" ,"color":"#181818"});
+                $(this).find(".origin-cost").css({ "z-index": "0"});
+                $(this).find(".item-heading span").css({ "color": "#181818" });
+            });
+
+
+            $('.btn-add-wishlist').on('click', function(){ 
+                
+                if( $(this).hasClass('added-wishlist') ){
+                    $(this).removeClass('added-wishlist')
+                        .siblings('span').text('Add to wishlist');
+                }else if(!$(this).hasClass('added-wishlist')) {
+                    $(this).addClass('added-wishlist').siblings('span').text('Added');
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="skipnav">
+        <a href="#main" class="a11y">본문바로가기</a>
+    </div>
+    <div class="container">
+        <h1 class="readable-hidden">shopping mall</h1>
+
+        <!-- row 1 -->
+        <section class="section clearfix" id="main">
+            <h2 class="readable-hidden">쇼핑 상품 4가지 카드형 목록</h2>
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Lacoste Men's Pocket</span>
+                        <span>Polo Shirt - Sahara</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth1.png" alt="배색 반팔 티셔츠">
+                    </p>
+                    <p class="item-price item-hit">
+                        <span class="curr-cost">$75</span>
+                        <span class="origin-cost"></span>
+                    </p>
+
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Lacoste Men's Pocket</span>
+                            <span>Polo Shirt - Sahara</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product 1 end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Lacoste Men's Pocket</span>
+                        <span>Polo Shirt - Sahara</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth1.png" alt="배색 반팔 티셔츠">
+                    </p>
+                    <p class="item-price item-hit">
+                        <span class="curr-cost">$75</span>
+                        <span class="origin-cost"></span>
+                    </p>
+            
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Lacoste Men's Pocket</span>
+                            <span>Polo Shirt - Sahara</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product 2 end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Lyle & Scott Men's Short</span>
+                        <span>Sleeve Camo Pocket</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth2.png" alt="회색 반팔 티셔츠">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$60</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Lyle & Scott Men's Short</span>
+                            <span>Sleeve Camo Pocket</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product 3 end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Lacoste Men's Polo Shirt -</span>
+                        <span>Bright Pink</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth1.png" alt="배색 반팔 티셔츠">
+                    </p>
+                    <p class="item-price item-new">
+                        <span class="curr-cost">$75</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Lacoste Men's Polo Shirt -</span>
+                            <span>Bright Pink</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product 4 end-->
+        </section>
+
+        <!-- row 2 리스트 -->
+        <section class="section clearfix">
+            <article class="article1 col push-1 col-6" tabindex="0">
+                <h4 class="item-heading">
+                    <span>Luke 1977 Men's Soeron 2</span>
+                    <span>Single Breasted Blazer</span>
+                    <span class="item-name">Charcoal</span>
+                </h4>
+                <p class="item-pic">
+                    <img src="./image/img_cloth3.png" alt="회색자켓">
+                </p>
+                <p class="item-price item-new">
+                    <span class="curr-cost">$170</span>
+                    <span class="origin-cost"></span>
+                </p>
+                <div class="buy-group">
+                    <p class="buy-option">
+                        <select name="" class="select-size" tabindex="0">
+                            <option selected disabled>Size</option>
+                            <option value="small">small</option>
+                            <option value="medium">medium</option>
+                            <option value="large">large</option>
+                        </select>
+                        <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                    </p>
+                    <p class="save-wishlist">
+                        <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                        <span>Add to wishlist</span>
+                    </p>
+                </div>
+            </article><!-- list 1 end -->
+            <article class="article1 col push-1 col-6" tabindex="0">
+                <h4 class="item-heading">
+                    <span>H Shoes by Hudson Men's</span>
+                    <span>Houghton 2 Leather Desert</span>
+                    <span class="item-name">Boots</span>
+                </h4>
+                <p class="item-pic">
+                    <img src="./image/img_shoes3.png" alt="브라운 가죽구두">
+                </p>
+                <p class="item-price item-sale">
+                    <span class="curr-cost">$90</span>
+                    <span class="origin-cost"></span>
+                </p>
+                <div class="buy-group">
+                    <p class="buy-option">
+                        <select name="" class="select-size" tabindex="0">
+                            <option selected disabled>Size</option>
+                            <option value="small">small</option>
+                            <option value="medium">medium</option>
+                            <option value="large">large</option>
+                        </select>
+                        <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                    </p>
+                    <p class="save-wishlist">
+                        <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                        <span>Add to wishlist</span>
+                    </p>
+                </div>
+            </article><!-- list 2 end -->
+            <article class="article1 col push-1 col-6" tabindex="0">
+                <h4 class="item-heading">
+                    <span>H Shoes by Hudson Men's</span>
+                    <span>Houghton 2 Leather Desert</span>
+                    <span class="item-name">Boots</span>
+                </h4>
+                <p class="item-pic">
+                    <img src="./image/img_backpack.png" alt="검정색 백팩">
+                </p>
+                <p class="item-price item-new">
+                    <span class="curr-cost">$90</span>
+                    <span class="origin-cost"></span>
+                </p>
+                <div class="buy-group">
+                    <p class="buy-option">
+                        <select name="" class="select-size" tabindex="0">
+                            <option selected disabled>Size</option>
+                            <option value="small">small</option>
+                            <option value="medium">medium</option>
+                            <option value="large">large</option>
+                        </select>
+                        <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                    </p>
+                    <p class="save-wishlist">
+                        <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                        <span>Add to wishlist</span>
+                    </p>
+                </div>
+            </article><!-- list 3 end -->
+            <article class="article1 col push-1 col-6" tabindex="0">
+                <h4 class="item-heading">
+                    <span>New Balance Men's Street</span>
+                    <span>Backpack - Black</span>
+                    <span class="item-name">Bags</span>
+                </h4>
+                <p class="item-pic">
+                    <img src="./image/img_cloth3.png" alt="검정 토트백">
+                </p>
+                <p class="item-price item-new">
+                    <span class="curr-cost">$145</span>
+                    <span class="origin-cost"></span>
+                </p>
+                <div class="buy-group">
+                    <p class="buy-option">
+                        <select name="" class="select-size" tabindex="0">
+                            <option selected disabled>Size</option>
+                            <option value="small">small</option>
+                            <option value="medium">medium</option>
+                            <option value="large">large</option>
+                        </select>
+                        <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                    </p>
+                    <p class="save-wishlist">
+                        <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                        <span>Add to wishlist</span>
+                    </p>
+                </div>
+            </article><!-- list 4 end -->
+        </section>
+
+        <!-- row 3 -->
+        <section class="section clearfix">
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Fiorelli Rita Striped</span>
+                        <span>Tote Bag</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_totebag.png" alt="검정 토트백">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$170</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Fiorelli Rita Striped</span>
+                            <span>Tote Bag</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>H&M Chino Shorts</span>
+                        <span class="visible-hidden">-</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_chinoShort.png" alt="검정 치노백">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$12</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>H&M Chino Shorts</span>
+                            <span class="visible-hidden">-</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Bobbies Elegant Leather</span>
+                        <span>Driving Shoes</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_drivingShoes.png" alt="드라이빙슈즈">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$140</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Bobbies Elegant Leather</span>
+                            <span>Driving Shoes</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Fiorelli Rita Striped</span>
+                        <span>Tote Bag</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_pants.png" alt="청 반바지">
+                    </p>
+                    <p class="item-price item-sale">
+                        <span class="curr-cost">$170</span>
+                        <span class="origin-cost">$180</span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Fiorelli Rita Striped</span>
+                            <span>Tote Bag</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article><!--product end-->
+        </section>
+        <!-- row 4 -->
+        <section class="section clearfix">
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>H&M Canvas Parka</span>
+                        <span class="visible-hidden">-</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth4.png" alt="검정 누빔 집업">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$69</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Fiorelli Rita Striped</span>
+                            <span>Tote Bag</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!--product end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>ASOS Skinny Band Felt</span>
+                        <span>Floppy Hat</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth5.png" alt="빨간색 카라 반팔티">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$24</span>
+                        <span class="origin-cost"></span>
+                    </p>
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>H&M Chino Shorts</span>
+                            <span class="visible-hidden">-</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!--product end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>Ted Baker Leather</span>
+                        <span>Messenger Bag</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth6.png" alt="쥐색 바라막이 자켓">
+                    </p>
+                    <p class="item-price item-new">
+                        <span class="curr-cost">$344</span>
+                        <span class="origin-cost"></span>
+                    </p>
+    
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Bobbies Elegant Leather</span>
+                            <span>Driving Shoes</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!--product end-->
+            <article class="col col-2">
+                <h3 class="readable-hidden">상품</h3>
+                <div class="item-box item-box-sm" tabindex="0">
+                    <h4 class="item-heading">
+                        <span>H&M Canvas Parka</span>
+                        <span class="visible-hidden">-</span>
+                    </h4>
+                    <p class="item-pic">
+                        <img src="./image/img_cloth7.png" alt="블루 메탈 집업">
+                    </p>
+                    <p class="item-price">
+                        <span class="curr-cost">$69</span>
+                        <span class="origin-cost"></span>
+                    </p>
+    
+                    <div class="item-box item-option">
+                        <h4 class="item-heading">
+                            <span>Fiorelli Rita Striped</span>
+                            <span>Tote Bag</span>
+                        </h4>
+                        <p class="buy-option">
+                            <select name="" class="select-size" tabindex="0">
+                                <option selected disabled>Size</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                            </select>
+                            <button type="button" class="btn-add-cart" tabindex="0">Add to cart</button>
+                        </p>
+                        <p class="save-wishlist">
+                            <button type="button" class="btn-add-wishlist">내 위시리시스트에 저장</button>
+                            <span>Add to wishlist</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!--product end-->
+        </section>
+
+        <section class="section clearfix">
+            <article class="col col-4"></article>
+            <article class="col col-4"></article>
+        </section>
+    </div>
+</body>
+</html>
